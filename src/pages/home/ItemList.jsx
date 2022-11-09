@@ -6,9 +6,9 @@ const ItemList = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
     const startProduct = useRef(1);
-    const endProduct = useRef(15);
+    const endProduct = useRef(10);
 
-    const getProducts = async (start ='1', end = '15') => {
+    const getProducts = async (start ='1', end = '10') => {
         try {
             setLoading(true);
             const promises = [];
@@ -29,20 +29,20 @@ const ItemList = () => {
     }, [])
 
     const handleNext = async () => {
-        startProduct.current += 20;
-        endProduct.current += 20;
+        startProduct.current += 10;
+        endProduct.current += 10;
         getProducts(startProduct.current, endProduct.current);
     }
 
     const handlePrev = async () => {
-        startProduct.current -= 20;
-        endProduct.current -= 20;
+        startProduct.current -= 10;
+        endProduct.current -= 10;
         getProducts(startProduct.current, endProduct.current);
     }    
     return (
         <div>
             {loading ? (
-                <div>Loading...</div>
+                <div><i class="fa-solid fa-spinner"></i> Loading...</div>
             ) : (
                 <>
                     <div className="list-container">
@@ -52,11 +52,9 @@ const ItemList = () => {
                     </div>
                     <div className="button-container">
                     <button disabled={startProduct.current <= 1 || loading} onClick={handlePrev}>Previous</button>
-                    <button disabled={endProduct.current >= 300 || loading}  onClick={handleNext}>Next</button>
+                    <button disabled={endProduct.current >= 50 || loading}  onClick={handleNext}>Next</button>
                 </div>
                 </>
-
-
             )}
         </div>
     );

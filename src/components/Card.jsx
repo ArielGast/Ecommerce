@@ -15,8 +15,8 @@ const Card = ({ item}) => {
             </div>
             <div className="card-content">
                 <p className='card-name'>{name}</p>
-                <p className='card-name'>{description}</p>
-                <p className='card-type'>$ {price}</p>
+                <p className='card-description'>{description}</p>
+                <p className='card-price'>$ {price}</p>
                 <p className='card-id'>Id:{id}</p>
             </div>
         </div>
