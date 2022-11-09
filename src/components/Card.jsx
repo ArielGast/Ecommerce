@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import './Card.css';
 
 const Card = ({ item}) => {
-    const { id, name, image, price, description} = item;
+    const { id, name, image, price, description, stock} = item;
     const navigate = useNavigate();
     const handleDetail = () => {
         navigate(`/category/${id}`, { state: item });
@@ -18,6 +18,7 @@ const Card = ({ item}) => {
                 <p className='card-description'>{description}</p>
                 <p className='card-price'>$ {price}</p>
                 <p className='card-id'>Id:{id}</p>
+                <p className='card-id'>Stock: {stock}</p>
             </div>
         </div>
     )
