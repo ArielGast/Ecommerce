@@ -8,13 +8,21 @@ import  CartWidget from './CartWidget';
 function NavBar () {
     return (
         <nav className="navbar">
-            <img className='brand-image' src={brand} alt='brand image'></img>
             <div className='navbar-nav'>
+                <img className='brand-image' src={brand} alt='brand image'></img>
                 <ul className='navbar__ul'>
-                    <li className='itemNavbar'><a href="#">Servidores<i className="fa-solid fa-server menu-icon"></i></a></li>
-                    <li className='itemNavbar'><a href="#">APIs<i className="fa-solid fa-terminal menu-icon"></i></a></li>
-                    <li className='itemNavbar'><a href="#">Cloud Computing<i className="fa-solid fa-cloud menu-icon"></i></a></li>
-                    <li className='itemNavbar'><a href="#">Contacto<i className="fa-solid fa-message menu-icon"></i></a></li>
+                    <li className='itemNavbar'><a href="#"><i className="fa-solid fa-house menu-icon"></i></a>
+                        <span className='nav-title'>Mostrador</span>
+                    </li>
+                    <li className='itemNavbar'><a href="#"><i className="fa-solid fa-pizza-slice menu-icon"></i></a>
+                        <span className='nav-title'>Pizzas</span>
+                    </li>
+                    <li className='itemNavbar'><a href="#"><i className="fa-solid fa-burger menu-icon"></i></a>
+                        <span className='nav-title'>Hamburguesas</span>
+                    </li>
+                    <li className='itemNavbar'><a href="#"><i className="fa-solid fa-message menu-icon"></i></a>
+                        <span className='nav-title'>Contacto</span>      
+                    </li>
                 </ul>
             </div>
             <CartWidget />

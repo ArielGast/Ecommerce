@@ -1,5 +1,7 @@
 import React from "react";
 import './CartWidget.css'
+import count from "./ItemCount";
+
 function widget() {
     return (
         <div className='cart'>
