@@ -24,8 +24,11 @@
     overflow: hidden;
 }
 .card-image {
-    width: 160px;
-    height: 160px;
+    /* width: 160px;
+    height: 160px; */
+    width: 80%;
+    height: 80%;
+    
 }
 .card-content {
     display: flex;

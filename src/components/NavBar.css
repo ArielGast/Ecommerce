@@ -1,10 +1,12 @@
 .navbar {
     display: flex;
     width: 100%;
+    background-image: url('./fondo-nav.jpg');
+    background-size: contain;
 }
 .navbar-nav {
     display: flex; 
-    background-color: rgb(120, 123, 131);
+    /* background-color: rgb(120, 123, 131); */
     width: 100%;
     justify-content: flex-start;
     flex: 1;
