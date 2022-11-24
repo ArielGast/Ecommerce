@@ -1,14 +1,18 @@
 import React from "react";
+import { useContext } from "react";
+import { ProductContext } from "../context/productContext";
 import './CartWidget.css'
-import count from "./ItemCount";
+import cartImage from "./shopping_cart.png"
 
-function widget() {
+
+function CartWidget() {
+    const {cart, setCart} = useContext(ProductContext)
     return (
         <div className='cart'>
-            <i className="fa-solid fa-cart-shopping"></i>
-            <span>0</span>
+            <img className="image-cart" src={cartImage} alt="shopping cart"></img>
+            <span>{cart.length}</span>
         </div>
     )
 };
 
-export default widget;
+export default CartWidget;

@@ -1,19 +1,22 @@
 import { createContext, useState } from "react";
 
+
 const initialState  = {
+    art: {},
+    setArt: () => {},
     isEmpty: true,
-    toggleCart: () => {},
+    setIsEmpty: () => {},
 } 
 
-export const ThemeContext = createContext(initialState);
+export const CartContext = createContext(initialState);
 
-export const ThemeProvider = ({children}) => {
+export const CartProvider = ({children}) => {
+    const [art, setArt] = useState([]);
     const [isEmpty, setIsEmpty] = useState(true);
-    
-    const toggleCart = () {
-        setIsEmpty(isEmpty);
-    }
+
+    return (
+        <CartContext.Provider value={{art, setArt, isEmpty, setIsEmpty}}>
+            {children}
+        </CartContext.Provider>
+    )
 }
-return (
-    <ThemeContext.Provider value={isEmpty, toggleCart}
-)

@@ -1,10 +1,13 @@
-import React, {useEffect, useState, useRef} from "react";
+import React, {useEffect, useState, useRef, useContext}  from "react";
 import Card from '../../components/Card';
 import './ItemList.css';
 import Spinner from '../../components/Spinner/index';
+import { ProductContext } from "../../context/productContext";
+
 
 const ItemList = () => {
-    const [products, setProducts] = useState([]);
+
+    const {products, setProducts} = useContext(ProductContext);
     const [loading, setLoading] = useState(false);
     const startProduct = useRef(1);
     const endProduct = useRef(20);
