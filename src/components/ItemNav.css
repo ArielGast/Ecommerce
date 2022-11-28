@@ -1,0 +1,18 @@
+.itemMenu{
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.itemNav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex: 1;
+}
+.menuImage {
+    width: 73px;
+    height: 180px;
+    padding: auto; 
+}

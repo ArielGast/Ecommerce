@@ -4,7 +4,6 @@ import Card from '../../components/Card';
 import ItemCount from "../../components/ItemCount";
 
 const ItemDetail = () => {
-    /* const params = useParams(); */
     const { state } = useLocation();
 
     return (

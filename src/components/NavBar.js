@@ -1,39 +1,42 @@
 import React from 'react';
+import { collection, getDocs, getFirestore} from 'firebase/firestore';
 import './NavBar.css';
+import { useContext, useEffect } from "react";
+import { ProductContext } from "../context/productContext";
 import  brand from './brand.png';
-import  home from './home.png';
-import  red from './red.png';
-import  white from './white.png';
-import  rose from './rose.png';
-import  sparkling from './sparkling.png';
 import  CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
+import ItemNav from './ItemNav';
 
 
 function NavBar () {
+    const {allCategories, setAllCategories} = useContext(ProductContext);
+    useEffect (() =>{
+        const db = getFirestore();
+        const categoryCollection = collection(db, 'category');
+        getDocs(categoryCollection).then(snapshot => {
+            if (snapshot.size === 0) {
+                console.log('No results');
+            }
+            const category = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}));
+            setAllCategories(category);
+        }).catch((err) => {
+            console.log(err)
+        });
+    },[])
+
     return (
-        <nav className="navbar">
+        <nav className='navbar'>
             <div className='navbar-brand'>
-                <Link to={`/`} className='brand-link'><img className='brand-image' src={brand} alt='brand'></img></Link>
+            <Link to={`/`} className='brand-link'><img className='brand-image' src={brand} alt='brand'></img></Link>
             </div>
-            <ul className='navbar__ul'>
-                <li className='itemNavbar'><Link to={`/`} className='nav-link'><img className='menu-image' src={home} alt='Grapes and glass of Wine'></img>
-                    <span className='nav-title'>Home</span></Link>
-                </li>
-                <li className='itemNavbar'><Link to={`/`} className='nav-link'><img className='menu-image' src={red} alt='Glass of Red Wine'></img>
-                    <span className='nav-title'>Red</span></Link>
-                </li>
-                <li className='itemNavbar'><Link to={`/`} className='nav-link'><img className='menu-image' src={white} alt=' Glass of White Wine'></img>
-                    <span className='nav-title'>Rose</span></Link>
-                </li>
-                <li className='itemNavbar'><Link to={`/`} className='nav-link'><img className='menu-image' src={rose} alt=' Glass of Rose Wine'></img>
-                    <span className='nav-title'>White</span></Link>      
-                </li>
-                <li className='itemNavbar'><Link to={`/`} className='nav-link'><img className='menu-image' src={sparkling} alt=' Glass of Sparkling Wine'></img>
-                    <span className='nav-title'>Sparkling</span></Link>      
-                </li>
-            </ul>
+            <div className='itemNavbar'>
+                {allCategories.map(cat => (
+                        <ItemNav key={cat.id} item={cat} /> 
+                ))}
+            </div>
             <CartWidget />
+
         </nav>
     )
 }

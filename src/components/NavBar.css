@@ -1,6 +1,6 @@
 .navbar {
     display: flex;
-    flex-direction: row;
+    width: 100%;
     
 }
 .navbar-brand{
@@ -14,19 +14,10 @@
 }
 .navbar__ul {
     display: flex; 
-    justify-content: space-between;
-    flex: 1;
-    align-items: center;
 
 }
 .itemNavbar {
-    list-style: none;
-}
-.nav-link {
-    text-decoration: none;
-}
-
-.menu-image {
-    width: 50px;
-    height: 125px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
 }

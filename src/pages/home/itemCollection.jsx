@@ -6,7 +6,7 @@ import Spinner from '../../components/Spinner/index';
 import Card from '../../components/Card';
 import { ProductContext } from "../../context/productContext";
 
-const ItemListFirebase = () => {
+const ItemCollection = () => {
 
     const {allProducts, setAllProducts} = useContext(ProductContext); 
     const [loading, setLoading] = useState(false);
@@ -24,7 +24,6 @@ const ItemListFirebase = () => {
         });
     
     }, []);
-
     return (
         <div>
             {loading ? (
@@ -43,4 +42,4 @@ const ItemListFirebase = () => {
 
 }
 
-export default ItemListFirebase;
+export default ItemCollection;

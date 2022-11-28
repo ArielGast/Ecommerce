@@ -6,7 +6,7 @@ const Card = ({item}) => {
     const { id, wine, image, winery, location, price,stock} = item;
     const navigate = useNavigate();
     const handleDetail = () => {
-        navigate(`/category/${id}`, { state: item });
+        navigate(`/wine/${id}`, { state: item });
     }
     return (
         <div onClick={handleDetail} className="card">
