@@ -10,9 +10,33 @@
     flex-direction: column;
     justify-content: space-evenly;
     flex: 1;
+    width: 100%;
+}
+.imageContainer {
+    width: 30%;
+
 }
 .menuImage {
-    width: 73px;
-    height: 180px;
+    width: 50px;
+    height: 120px;
     padding: auto; 
+    transition: all 0.2s ease-in-out;
 }
+
+.itemName {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.8rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+    background-color: bisque;
+}
+
+.itemNav:hover {
+    cursor: pointer;
+}
+.itemNav:hover .itemName {
+    background-color: black;
+    color: bisque;
+}
+

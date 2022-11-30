@@ -19,7 +19,9 @@ function ItemNav ({item}) {
     return (
         <div className='itemMenu' onClick={handleMenu}>
             <div className="itemNav">
-                <img  className="menuImage" src={image} alt={item.name} />
+                <div className="imageContainer">
+                    <img  className="menuImage" src={image} alt={item.name} />
+                </div>
                 <div className="containerItemName">
                     <p className="itemName">{name}</p>
                 </div>

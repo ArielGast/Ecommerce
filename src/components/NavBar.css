@@ -1,17 +1,35 @@
 .navbar {
     display: flex;
     width: 100%;
+    background-color: rgb(122, 78, 126);
     
 }
 .navbar-brand{
     display: flex;
-    width: 20%;
-    justify-content: space-evenly;
+    width: 30%;
     align-items: center;
 }
+
 .brand-image {
-    width: 30%;
+    width: 100%;
+    position: relative;
 }
+.brand-image:hover{
+    cursor:pointer;
+    box-shadow: 3px 3px rgb(190, 174, 174);
+
+}
+.titleBrand{
+    position: absolute;
+    color: red;
+    font-size: 3rem;
+    font-weight: 600;
+    padding: auto;
+    rotate: -45deg;
+    margin-left: 4rem;
+    text-shadow: solid 2px 2px rgb(110, 108, 108);
+}
+
 .navbar__ul {
     display: flex; 
 
@@ -20,4 +38,11 @@
     display: flex;
     justify-content: space-evenly;
     width: 100%;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.itemPromoNavbar{
+    font-size: 2.5rem;
+    font-weight: 800;
 }

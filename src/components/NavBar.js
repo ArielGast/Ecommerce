@@ -3,13 +3,13 @@ import { collection, getDocs, getFirestore} from 'firebase/firestore';
 import './NavBar.css';
 import { useContext, useEffect } from "react";
 import { ProductContext } from "../context/productContext";
-import  brand from './brand.png';
+import fondo from './fondo-nav.jpg'
 import  CartWidget from './CartWidget';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import ItemNav from './ItemNav';
 
-
 function NavBar () {
+    const navigate = useNavigate();
     const {allCategories, setAllCategories} = useContext(ProductContext);
     useEffect (() =>{
         const db = getFirestore();
@@ -25,15 +25,24 @@ function NavBar () {
         });
     },[])
 
+    const handleList = () =>{
+        navigate(`/`);
+    }
+    const hadlePromo = () => {
+        navigate(`/Promos`);
+    }
+
     return (
         <nav className='navbar'>
             <div className='navbar-brand'>
-            <Link to={`/`} className='brand-link'><img className='brand-image' src={brand} alt='brand'></img></Link>
+            <img onClick={handleList} className='brand-image' src={fondo} alt='brand'></img>
+            <p className='titleBrand'>Wine Store</p>
             </div>
             <div className='itemNavbar'>
                 {allCategories.map(cat => (
                         <ItemNav key={cat.id} item={cat} /> 
                 ))}
+                <p className='itemPromoNavbar' onClick={hadlePromo}>Promos</p>
             </div>
             <CartWidget />
 
