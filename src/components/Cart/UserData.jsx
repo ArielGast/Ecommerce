@@ -1,12 +1,11 @@
 import React from "react";
 import { useState, useContext } from "react";
-import { ProductContext } from "../context/productContext";
+import { ProductContext } from "../../context/productContext";
 import {getFirestore, collection, addDoc} from 'firebase/firestore';
 import { useNavigate } from "react-router-dom";
 
-
 const UserData = () => {
-    const {cart} = useContext(ProductContext);
+    const {cart, setCart} = useContext(ProductContext);
     const totalPurchase = cart.reduce((total, ele) => total + ele.price*ele.quantity, 0);
     const [userInput, setUserInput] = useState();
     const [mailInput, setMailInput] = useState();
@@ -34,9 +33,10 @@ const UserData = () => {
         const cartsCollection = collection(db, 'cart');
         addDoc(cartsCollection, mycart).then((doc) =>{
             setCartId(doc.id)
-        })
+        }).catch((err) => {
+            console.log(err);
+        }).finally(setCart([]));
         navigate(`/PurchaseFinish`);
-
     };
 
     return (

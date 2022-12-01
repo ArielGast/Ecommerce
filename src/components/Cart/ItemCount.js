@@ -1,10 +1,10 @@
-import React, {useState, useContext} from "react";
-import { ProductContext } from "../context/productContext";
+import React, {useContext} from "react";
+import { ProductContext } from "../../context/productContext";
 import './ItemCount.css';
 
 const ItemCount = ({item}) => {
     const {cart, setCart} = useContext(ProductContext);
-    const {allProducts, setAllProducts} = useContext(ProductContext);
+    const {allProducts} = useContext(ProductContext);
     const {stock, id} = item; 
 
     const descreaseQuantity = () => {
@@ -50,8 +50,7 @@ const ItemCount = ({item}) => {
     }
 
     const numberOfItem = getItemQuantity(item.id);
-    console.log(cart.length)
-
+    
     return (
         <div className='button-container'>
             <button className='button-count' disabled = {numberOfItem >= stock} onClick ={() => increaseQuantity()}>+</button>

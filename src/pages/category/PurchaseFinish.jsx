@@ -4,7 +4,7 @@ const PurchaseFinish = () => {
 
     return(
         <div>
-            <h1>Thnks for Buying - Enjoy!!</h1>
+            <h1>Thanks for Buying - Enjoy!!</h1>
         </div>
     )
 }

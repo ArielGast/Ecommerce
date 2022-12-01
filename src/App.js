@@ -1,11 +1,9 @@
 import React from 'react';
 import './App.css';
-import NavBar from './components/NavBar';
+import NavBar from './components/Nav/NavBar';
 import {Routes, Route} from 'react-router-dom';
 import {ItemListContainer, ItemDetail, ItemFiltered, ItemPromos, CartCheckOut, PurchaseFinish } from './pages/index';
 import {ProductProvider} from './context/productContext';
-
-
 
 function App() {
   return (

@@ -1,13 +1,13 @@
 import React from "react";
 import { useContext } from "react";
-import { ProductContext } from "../context/productContext";
+import { ProductContext } from "../../context/productContext";
 import './CartWidget.css'
-import cartImage from "./shopping_cart.png"
+import cartImage from '../images/shopping_cart.png';
 import {useNavigate} from "react-router-dom";
 
 function CartWidget() {
     const navigate = useNavigate();
-    const {cart, setCart} = useContext(ProductContext)
+    const {cart} = useContext(ProductContext)
      const handleCart = () => {
         navigate(`/checkout`);
      }

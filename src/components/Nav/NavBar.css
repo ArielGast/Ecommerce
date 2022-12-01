@@ -1,0 +1,61 @@
+@import 'animate.css';
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+.navbar {
+    display: flex;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(10,11,15,1) 0%, rgba(45,27,55,1) 39%, rgba(126,51,123,1) 88%);
+}
+.navbar-brand{
+    display: flex;
+    width: 20%;
+    align-items:flex-start;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.brand-image {
+    width: 50%;
+}
+
+.titleBrand{
+    font-family: 'Yeseva One', cursive;
+    color: red;
+    font-size: 1.6rem;
+}
+
+.navbar__ul {
+    display: flex; 
+
+}
+.itemNavbar {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.promoNavbar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 10%;
+    cursor: pointer;
+}
+.promoImg {
+    margin-top: 5%;
+    width: 90%;
+    height: 145px;
+    border-radius: 80%;
+}
+.itemPromoNavbar{
+    font-family: 'Yeseva One', cursive;
+    color: rgb(207, 151, 106);
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+.itemPromoNavbar:hover {
+    animation: heartBeat;
+    animation-duration: 2s;
+}

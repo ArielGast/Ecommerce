@@ -2,12 +2,12 @@ import React from "react";
 import './ItemNav.css';
 import {useContext} from 'react';
 import { useNavigate } from "react-router-dom";
-import { ProductContext} from '../context/productContext';
-import '../pages/home/ItemList.css';
+import { ProductContext} from '../../context/productContext';
+import '../../pages/home/ItemList.css';
 
 function ItemNav ({item}) {
-    const {allProducts, setAllProducts} = useContext(ProductContext);
-    const {filteredProducts, setFilteredProducts} = useContext(ProductContext);
+    const {allProducts} = useContext(ProductContext);
+    const {setFilteredProducts} = useContext(ProductContext);
     const {name, image} = item;
     const navigate = useNavigate();
     const handleMenu = () => {
@@ -22,9 +22,7 @@ function ItemNav ({item}) {
                 <div className="imageContainer">
                     <img  className="menuImage" src={image} alt={item.name} />
                 </div>
-                <div className="containerItemName">
                     <p className="itemName">{name}</p>
-                </div>
             </div>
         </div>
     )

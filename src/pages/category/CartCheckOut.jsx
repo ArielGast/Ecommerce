@@ -1,8 +1,8 @@
 import React from "react";
 import { useContext} from "react";
 import { ProductContext } from "../../context/productContext";
-import CardCart from "../../components/CardCart";
-import UserData from "../../components/UserData";
+import CardCart from "../../components/Cart/CardCart";
+import UserData from "../../components/Cart/UserData";
 
 const CartCheckOut = () => {
     const{cart} = useContext(ProductContext);

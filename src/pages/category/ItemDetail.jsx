@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import Card from '../../components/Card';
-import ItemCount from "../../components/ItemCount";
+import Card from '../../components/Card/Card';
+import ItemCount from "../../components//Cart/ItemCount";
 
 const ItemDetail = () => {
     const { state } = useLocation();

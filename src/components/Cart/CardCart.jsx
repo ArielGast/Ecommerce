@@ -1,7 +1,7 @@
 import React from "react";
-import './Card.css';
+import '../Card/Card.css';
 import { useContext } from "react";
-import { ProductContext } from "../context/productContext";
+import { ProductContext } from "../../context/productContext";
 
 const CardCart = ({item}) => {
     const {cart, setCart} = useContext(ProductContext);

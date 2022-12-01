@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../../components/Card";
+import Card from "../../components/Card/Card";
 import { useState, useContext, useEffect} from "react";
 import { ProductContext } from "../../context/productContext";
 import { collection, getDocs, getFirestore, where, query } from "firebase/firestore";

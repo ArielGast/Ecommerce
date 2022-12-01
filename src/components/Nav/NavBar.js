@@ -2,11 +2,12 @@ import React from 'react';
 import { collection, getDocs, getFirestore} from 'firebase/firestore';
 import './NavBar.css';
 import { useContext, useEffect } from "react";
-import { ProductContext } from "../context/productContext";
-import fondo from './fondo-nav.jpg'
-import  CartWidget from './CartWidget';
+import { ProductContext } from "../../context/productContext";
+import  CartWidget from '../Cart/CartWidget';
 import { useNavigate } from 'react-router-dom';
 import ItemNav from './ItemNav';
+import catlogo from '../images/catwine.png';
+import catpromo from '../images/catwine2.png'
 
 function NavBar () {
     const navigate = useNavigate();
@@ -28,24 +29,26 @@ function NavBar () {
     const handleList = () =>{
         navigate(`/`);
     }
-    const hadlePromo = () => {
+    const handlePromo = () => {
         navigate(`/Promos`);
     }
 
     return (
         <nav className='navbar'>
             <div className='navbar-brand'>
-            <img onClick={handleList} className='brand-image' src={fondo} alt='brand'></img>
-            <p className='titleBrand'>Wine Store</p>
+                <img onClick={handleList} className='brand-image' src={catlogo} alt='brand'></img>
+                <p className='titleBrand'>Wine Store</p>
             </div>
             <div className='itemNavbar'>
                 {allCategories.map(cat => (
                         <ItemNav key={cat.id} item={cat} /> 
                 ))}
-                <p className='itemPromoNavbar' onClick={hadlePromo}>Promos</p>
+            </div>
+            <div className='promoNavbar'>
+                <img className='promoImg' onClick={handlePromo} src={catpromo} alt='Cat with cup of wine'></img>
+                <p className='itemPromoNavbar'>CAT - SALE!</p>
             </div>
             <CartWidget />
-
         </nav>
     )
 }

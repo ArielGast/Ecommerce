@@ -1,19 +1,19 @@
+@import 'animate.css';
 .itemMenu{
-    margin-top: 2%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     
 }
 .itemNav{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    flex: 1;
+    justify-content: space-evenly; 
+    flex: 1; 
     width: 100%;
+    align-items: center;
+    justify-items: center;
 }
 .imageContainer {
-    width: 30%;
+    width: 25%;
 
 }
 .menuImage {
@@ -25,18 +25,19 @@
 
 .itemName {
     text-transform: uppercase;
-    text-align: center;
     font-size: 0.8rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 600;
-    background-color: bisque;
+    color:blanchedalmond;
 }
 
 .itemNav:hover {
     cursor: pointer;
+    animation: pulse;
+    animation-duration: 1s;
 }
 .itemNav:hover .itemName {
-    background-color: black;
-    color: bisque;
+    color: orange;
+    opacity: 0.6;
 }
 
