@@ -12,8 +12,9 @@
     position: absolute;
 }
 .cartQty {
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color:rgb(103, 121, 224);
 
 }
 .cartImageContainer {

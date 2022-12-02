@@ -1,0 +1,26 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formTitle {
+    font-size: 2rem;
+    text-align: center;
+    color: rgb(13, 120, 153);
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+input {
+    padding-top: 10px;
+    margin-top: 15px;
+}
+.formTotal {
+    font-size: 1.2rem;
+    color: red;
+    
+}

@@ -24,7 +24,9 @@ const ItemPromos = () => {
             setFilteredProducts(productsPromo);
         }).catch((err) => {
             console.log(err);
-        }).finally(setLoading(false));
+        }).finally(() => {
+            setLoading(false);
+        });
 
     },[])
 
@@ -33,13 +35,15 @@ const ItemPromos = () => {
             {loading ? (
                 <Spinner />
             ) : (
-                <>
-                    <div className="list-container">
-                        {filteredProducts.map(product =>(
-                            <Card key={product.id} item={product} />
-                        ))}
+                    <div className="container">
+                        <h1 className="title">Choose the one you like the most!</h1>
+                        <div className="list-container">
+                            {filteredProducts.map(product =>(
+                                <Card key={product.id} item={product} />
+                            ))}
+                        </div>
                     </div>
-                </>
+                
             )}
 
         </div>

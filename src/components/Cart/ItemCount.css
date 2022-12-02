@@ -1,16 +1,16 @@
 .button-container {
     display: flex;
-    justify-content: flex-start;
-    width: fit-content;
+    justify-content: space-evenly;
+    width: 200px;
 }
 .button-count {
-    width: 50px;
-    height: 30px;
-    background-color: gray;
-    color: rgb(4, 50, 77);
-    border-radius: 5px;
+    width: 60px;
+    height: 40px;
+    background-color: rgb(156, 42, 190);
+    color: rgb(111, 157, 218);
+    border-radius: 40%;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 20px;
     text-align: center;
 
 }
@@ -19,17 +19,8 @@
     box-shadow: 2px 2px rgba(0, 0, 0, 0.295);
 }
 .span-count {
-    font-size: 20px;
-    color: rgb(1, 77, 30);
-}
-.button-addchart {
-    width: 60px;
-    height: 30px;
-    background-color: rgb(33, 109, 224);
-    color: rgb(255, 255, 255);
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 12px;
-    margin-left: 2%;
-    padding: auto;
+    width: 50px;
+    font-size: 2rem;
+    color: rgb(111, 157, 218);
+    text-align: center;
 }

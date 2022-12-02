@@ -21,8 +21,8 @@ function ItemNav ({item}) {
             <div className="itemNav">
                 <div className="imageContainer">
                     <img  className="menuImage" src={image} alt={item.name} />
-                </div>
                     <p className="itemName">{name}</p>
+                </div>
             </div>
         </div>
     )

@@ -1,33 +1,37 @@
+@import 'animate.css';
 .card {
     display: flex;
     flex-direction: column;
     width: 20%;
     justify-content: center;
     align-items: center;
-    height: fit-content;
-    margin: 10px;
+    height: 40rem;
+    /* margin: 10px; */
+    margin-left: 2rem;
+    margin-bottom: 4rem;
     background-color: #fff;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 10%;
+    padding: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: all 200ms ease;
+    background-color: rgb(117, 116, 116); 
 }
 
 .card:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(179, 241, 184, 0.7);
 }
 
 .card-image-container {
     display: flex;
-    flex: 1;
     overflow: hidden;
+    padding-top: 2%;
+ 
 }
 .card-image {
-    /* width: 160px;
-    height: 160px; */
-    width: 80%;
-    height: 80%;
+    padding-top: 2%;
+    width: 100%;
+    height: 100%;
     
 }
 .card-content {
@@ -37,21 +41,31 @@
     align-items: center;
 }
 .card-name {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: bold;
-    color: #212121;
+    color: #460b41;
+    text-align: center;
 }
 .card-description {
     font-size: 1rem;
-    color: #212121;
+    color: black;
 }
 .card-price {
     font-size: 1.2rem;
-    color: #b43939;
+    color: #15425c;
     font-weight: 600;
+}
+.card-content:hover .card-price {
+    animation: heartBeat;
+    animation-duration: 1s ;
 }
 .card-id {
     font-size: 14px;
     font-weight: bold;
-    color: #212121;
+    color: black;
+}
+.card-origin {
+    font-size: 1rem;
+    color: black;
+    font-weight: 600;
 }

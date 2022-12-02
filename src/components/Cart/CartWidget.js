@@ -15,7 +15,7 @@ function CartWidget() {
         <>
             <div className='cart'>
                 <div className="cartQtyContainer">
-                    <span className="cartQty">{cart.length}</span>
+                    <span className="cartQty">{cart.reduce((sum, ele) => sum + ele.quantity,0)}</span>
                 </div>
                 <div className="cartImageContainer" onClick={handleCart}>
                     <img className="image-cart" src={cartImage} alt="shopping cart"></img>

@@ -6,15 +6,16 @@
 }
 
 .title {
-    font-size: 22px;
+    font-size: 3rem;
     font-weight: bold;
-    color:#212121
+    color:#347097;
 }
 .list-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin-top: 15px;
+    justify-content: center;
 }
 .button-container {
     display: flex;

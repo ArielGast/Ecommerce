@@ -16,8 +16,8 @@ const Card = ({item}) => {
             <div className="card-content">
                 <p className='card-name'>{wine}</p>
                 <p className='card-description'> Winery: {winery}</p>
-                <p className='card-price'>Origin: {location}</p>
-                <p className='card-id'>Price: $ {price}</p> 
+                <p className='card-origin'>Origin: {location}</p>
+                <p className='card-price'>Price: $ {price}</p> 
                 <p className='card-id'>Id:{id}</p>
                 <p className='card-id'>Stock: {stock}</p>
             </div>

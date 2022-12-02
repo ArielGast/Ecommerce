@@ -3,6 +3,7 @@ import { useState, useContext } from "react";
 import { ProductContext } from "../../context/productContext";
 import {getFirestore, collection, addDoc} from 'firebase/firestore';
 import { useNavigate } from "react-router-dom";
+import './UserData.css';
 
 const UserData = () => {
     const {cart, setCart} = useContext(ProductContext);
@@ -41,12 +42,12 @@ const UserData = () => {
 
     return (
         <div className="mainContainer">
-            <h3>Complete your information to finish your purchase</h3>
+            <h3 className="formTitle">Complete your information to finish your purchase</h3>
                 <div className="form">
                     <input type="text" placeholder="Name" onChange={handleUserName}/>
                     <input type="email" placeholder="user@mail.com" onChange={handleUserMail}/>
                 </div> 
-            <p>Total: $ {totalPurchase}</p>
+            <p className="formTotal">Total: $ {totalPurchase}</p>
             <button className="buttonPurchase" onClick={handlePurchase}>Purchase</button>
         </div>       
     )

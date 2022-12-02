@@ -5,15 +5,18 @@ import { ProductContext } from "../../context/productContext";
 import '../home/ItemList.css'
 
 const ItemFiltered = () => {
-    const {filteredProducts} = useContext(ProductContext);    
+    const {filteredProducts , allCategories} = useContext(ProductContext);
     return (
-                
+        <div className="container">
+            <h1 className="title">Choose the one you like the most!</h1>
             <div className="list-container">
                 {filteredProducts.map(product =>(
                 <Card key={product.id} item={product} />
                 ))}
             </div>
-                )
+        </div>
+                
+    )
 }
 
 export default ItemFiltered;

@@ -46,15 +46,15 @@ const ItemCount = ({item}) => {
     }
 
     const getItemQuantity = (id) => {
-        return cart?.find(item => item.id === id)?.quantity || 0;
-    }
+      return cart?.find(item => item.id === id)?.quantity || 0; 
+      }
 
     const numberOfItem = getItemQuantity(item.id);
     
     return (
         <div className='button-container'>
             <button className='button-count' disabled = {numberOfItem >= stock} onClick ={() => increaseQuantity()}>+</button>
-            <span className='span-count'>{numberOfItem}</span>
+            <p className='span-count'>{numberOfItem}</p>
             <button className='button-count' disabled ={numberOfItem<= 0} onClick ={ () => descreaseQuantity()}>-</button>
         </div>
     );
